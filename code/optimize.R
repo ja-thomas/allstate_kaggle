@@ -10,7 +10,7 @@ load("../data/train.RData")
 
 task = makeRegrTask(data = train, target = "loss")
 
-lrn = makeLearner("regr.xgboost", booster = "dart", silent = 1)
+lrn = makeLearner("regr.xgboost", booster = "dart", nthread = 1L)
 
 
 ps = makeParamSet(
