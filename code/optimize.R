@@ -1,6 +1,8 @@
 library(devtools)
-load_all("~/rpackages/mlr/")
-load_all("~/rpackages/mlrMBO/")
+#load_all("~/rpackages/mlr/")
+#load_all("~/rpackages/mlrMBO/")
+library(mlr)
+library(mlrMBO)
 library(parallelMap)
 
 load("../data/train.RData")
