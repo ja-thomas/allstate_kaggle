@@ -39,3 +39,4 @@ ctrl = mlr:::makeTuneControlMBO(learner = surrogate.lrn,
 parallelStartMulticore(10L)
 res.mbo = tuneParams(lrn, task, rdesc, par.set = ps, control = ctrl, show.info = TRUE, 
   measures = mae)
+save(res.mbo, file = "../data/resultMBO.RData")
