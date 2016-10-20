@@ -23,7 +23,7 @@ ps = makeParamSet(
   makeNumericParam("lambda", lower = -10, upper = 10, trafo = function(x) 2^x),
   makeNumericParam("lambda_bias", lower = -10, upper = 10, trafo = function(x) 2^x),
   makeNumericParam("alpha", lower = -10, upper = 10, trafo = function(x) 2^x),
-  makeIntegerParam("nrounds", lower = 100, upper = 2000),
+  makeIntegerParam("nrounds", lower = 100, upper = 5000),
   makeNumericParam("rate_drop", lower = 0, upper = 1),
   makeNumericParam("skip_drop", lower = 0, upper = 1)
 )
