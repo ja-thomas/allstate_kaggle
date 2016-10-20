@@ -30,8 +30,8 @@ ps = makeParamSet(
 
 rdesc = cv10
 
-mbo.ctrl = makeMBOControl(save.on.disk.at = c(0, 5, 10, 20, 50, 70, 90, 101))
-mbo.ctrl = setMBOControlTermination(mbo.ctrl, iters = 100)
+mbo.ctrl = makeMBOControl(save.on.disk.at = c(0, 5, 10, 20, 50, 70, 90, 101, 120, 150, 200, 250, 300, 400, 500))
+mbo.ctrl = setMBOControlTermination(mbo.ctrl, iters = 500)
 surrogate.lrn = makeLearner("regr.km", predict.type = "se", nugget = 10^-6)
 ctrl = mlr:::makeTuneControlMBO(learner = surrogate.lrn,
   mbo.control = mbo.ctrl, same.resampling.instance = FALSE)
