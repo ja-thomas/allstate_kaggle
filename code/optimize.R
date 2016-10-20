@@ -36,7 +36,7 @@ surrogate.lrn = makeLearner("regr.km", predict.type = "se", nugget = 10^-6)
 ctrl = mlr:::makeTuneControlMBO(learner = surrogate.lrn,
   mbo.control = mbo.ctrl, same.resampling.instance = FALSE)
 
-parallelStartMulticore(10L)
+parallelStartMulticore(10L, level = "mlr.resample")
 res.mbo = tuneParams(lrn, task, rdesc, par.set = ps, control = ctrl, show.info = TRUE, 
   measures = mae)
 save(res.mbo, file = "../data/resultMBO.RData")
