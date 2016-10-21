@@ -10,12 +10,12 @@ load("../data/train.RData")
 
 task = makeRegrTask(data = train, target = "loss")
 
-lrn = makeLearner("regr.xgboost", booster = "dart", nthread = 1L)
+lrn = makeLearner("regr.xgboost", booster = "dart", nthread = 1L, silent = 1)
 
 
 ps = makeParamSet(
   makeNumericParam("eta", lower = 0.001, upper = 0.3),
-  makeNumericParam("gamma", lower = -10, upper = 10, traf = function(x) 2^x),
+  #makeNumericParam("gamma", lower = -10, upper = 10, traf = function(x) 2^x),
   makeIntegerParam("max_depth",  lower = 1L, upper = 15L),
   makeNumericParam("subsample", lower = 0.5, upper = 1),
   makeNumericParam("colsample_bytree", lower = 0.5, upper = 1),
